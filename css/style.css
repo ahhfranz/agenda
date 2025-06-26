@@ -114,3 +114,81 @@ button:hover {
         opacity: 1;
     }
 }
+
+
+
+@media (max-width: 480px) {
+    header {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        padding: 12px 10px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    main {
+        width: 85%;
+        padding: 12px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 12px;
+    }
+
+    .decorative-bar {
+        width: 95%;
+        height: 4px;
+        margin: 12px auto;
+    }
+
+    button,
+    .button-style {
+        padding: 10px 12px;
+        font-size: 1em;
+        border-radius: 8px;
+        margin-top: 16px;
+    }
+
+    main p {
+        font-size: 1.1em;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 900px) {
+    header {
+        margin-top: 40px;
+        margin-bottom: 28px;
+        padding: 16px 18px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    main {
+        width: 95%;
+        padding: 20px;
+        margin-top: 28px;
+        margin-bottom: 28px;
+        border-radius: 16px;
+    }
+
+    .decorative-bar {
+        width: 90%;
+        height: 5px;
+        margin: 16px auto;
+    }
+
+    button,
+    .button-style {
+        padding: 14px 22px;
+        font-size: 1.1em;
+        border-radius: 10px;
+        margin-top: 18px;
+    }
+
+    main p {
+        font-size: 1.3em;
+    }
+}
