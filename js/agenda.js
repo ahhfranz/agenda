@@ -1,35 +1,34 @@
-const tareas = [];
-let continuar = true;
+var tareas = [];
+var continuar = true;
 
 function mostrarMenu() {
-    return prompt(`Selecciona una opción:\n1. Agregar tarea\n2. Ver tareas\n3. Marcar tarea como realizada\n4. Eliminar tarea\n5. Salir`);
+    return prompt(
+        "Selecciona una opción:\n1. Agregar tarea\n2. Ver tareas\n3. Marcar tarea como realizada\n4. Eliminar tarea\n5. Salir"
+    );
 }
 
-function agregarTarea() {
-    const descripcion = prompt("Ingresa la descripción de la tarea:");
+function agregarTarea(descripcion) {
     if (descripcion) {
-        tareas.push({ descripcion, realizada: false });
-        alert(`Tarea agregada: "${descripcion}"`);
+        tareas.push({ descripcion: descripcion, realizada: false });
+        alert('Tarea agregada: "' + descripcion + '"');
     } else {
         alert("No se ingresó ninguna tarea.");
     }
 }
 
-function verTareas() {
-    if (tareas.length === 0) {
+function verTareas(listaTareas) {
+    if (listaTareas.length === 0) {
         alert("No hay tareas en la agenda.");
     } else {
-        let lista = "Tareas:\n";
-        tareas.forEach((tarea, index) => {
-            lista += `${index + 1}. ${tarea.descripcion} [${tarea.realizada ? 'Realizada' : 'Pendiente'}]\n`;
-        });
+        var lista = "Tareas:\n";
+        for (var i = 0; i < listaTareas.length; i++) {
+            lista += (i + 1) + ". " + listaTareas[i].descripcion + " [" + (listaTareas[i].realizada ? "Realizada" : "Pendiente") + "]\n";
+        }
         alert(lista);
     }
 }
 
-function marcarTareaRealizada() {
-    verTareas();
-    const indice = parseInt(prompt("Ingresa el número de la tarea realizada:"));
+function marcarTareaRealizada(indice) {
     if (!isNaN(indice) && indice >= 1 && indice <= tareas.length) {
         tareas[indice - 1].realizada = true;
         alert("Tarea marcada como realizada.");
@@ -38,11 +37,9 @@ function marcarTareaRealizada() {
     }
 }
 
-function eliminarTarea() {
-    verTareas();
-    const indice = parseInt(prompt("Ingresa el número de la tarea que deseas eliminar:"));
+function eliminarTarea(indice) {
     if (!isNaN(indice) && indice >= 1 && indice <= tareas.length) {
-        const confirmacion = confirm(`¿Estás seguro que deseas eliminar la tarea: "${tareas[indice - 1].descripcion}"?`);
+        var confirmacion = confirm('¿Estás seguro que deseas eliminar la tarea: "' + tareas[indice - 1].descripcion + '"?');
         if (confirmacion) {
             tareas.splice(indice - 1, 1);
             alert("Tarea eliminada.");
@@ -55,7 +52,7 @@ function eliminarTarea() {
 function iniciarAgenda() {
     alert("¡Bienvenido a la agenda!");
     while (continuar) {
-        const opcion = mostrarMenu();
+        var opcion = mostrarMenu();
 
         if (opcion === null) {
             alert("Saliste de la agenda. ¡Nos vemos!");
@@ -64,16 +61,21 @@ function iniciarAgenda() {
 
         switch (opcion) {
             case "1":
-                agregarTarea();
+                var desc = prompt("Ingresa la descripción de la tarea:");
+                agregarTarea(desc);
                 break;
             case "2":
-                verTareas();
+                verTareas(tareas);
                 break;
             case "3":
-                marcarTareaRealizada();
+                verTareas(tareas);
+                var ind = parseInt(prompt("Ingresa el número de la tarea realizada:"));
+                marcarTareaRealizada(ind);
                 break;
             case "4":
-                eliminarTarea();
+                verTareas(tareas);
+                var indE = parseInt(prompt("Ingresa el número de la tarea que deseas eliminar:"));
+                eliminarTarea(indE);
                 break;
             case "5":
                 continuar = false;
@@ -85,4 +87,4 @@ function iniciarAgenda() {
     }
 }
 
-document.getElementById("abrirAgenda").addEventListener("click", iniciarAgenda);
+iniciarAgenda();
