@@ -1,0 +1,139 @@
+body {
+    background: #2e2e52;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f5f5f5;
+}
+
+main.container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.18);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 12px;
+    font-size: 2em;
+}
+
+.decorative-bar {
+    width: 80%;
+    height: 5px;
+    background: linear-gradient(90deg, #4f8cff, #6c63ff, #a259ff);
+    border-radius: 3px;
+    margin: 18px auto;
+}
+
+form {
+    margin-bottom: 18px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1em;
+}
+
+button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    background: #4f8cff;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #2c3e80;
+}
+
+button.realizada {
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: default;
+}
+
+ul#lista-tareas {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 18px 0;
+}
+
+ul#lista-tareas li {
+    background: rgba(255, 255, 255, 0.08);
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ul#lista-tareas button {
+    margin-left: 8px;
+    font-size: 0.95em;
+    padding: 4px 10px;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.5em;
+    margin-top: 12px;
+}
+
+ul#lista-tareas li.tarea-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.08);
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.tarea-texto {
+    flex: 1;
+    text-align: left;
+}
+
+.tarea-botones {
+    display: flex;
+    gap: 8px;
+}
+
+.descripcion-app {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-top: 18px;
+    font-size: 1.08em;
+    color: #e0e0e0;
+}
+
+.descripcion-app .acciones {
+    font-weight: bold;
+    color: #4f8cff;
+}
+
+
+@media (max-width: 600px) {
+    main.container {
+        padding: 12px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 1.3em;
+    }
+}
